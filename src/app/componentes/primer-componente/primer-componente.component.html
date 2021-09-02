@@ -2,3 +2,20 @@
 <app-segundo-componente></app-segundo-componente>
 <input type="text" [class]="color">
 <input type="button" (click)="cambiar()" value="Aceptar">
+<br><br>
+<div class="row">
+    <label>Nombre</label>
+    <input type="text" [(ngModel)]="persona.nombre" name="nombre">
+</div>
+
+<div class="row">
+    <label>Apellido</label>
+    <input type="text" [(ngModel)]="persona.apellido" name="apellido">
+</div>
+
+<div class="row">
+    <label>DNI</label>
+    <input type="text" [(ngModel)]="persona.dni" name="dni">
+</div>
+
+<input type="button" (click)="cambiarObjeto()" value="Cambiar">

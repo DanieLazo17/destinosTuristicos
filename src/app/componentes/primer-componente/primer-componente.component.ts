@@ -7,15 +7,22 @@ import { Persona } from 'src/app/entidades/persona';
   styleUrls: ['./primer-componente.component.css']
 })
 export class PrimerComponenteComponent implements OnInit {
-  persona:Persona | undefined;
+  persona:Persona;
 
   color:String='rojo';
-  constructor() { }
+  constructor() { 
+    this.persona = {nombre:"Emanuel", apellido:"Lena", dni:38288000};
+  }
 
   ngOnInit(): void {
   }
 
   cambiar():void {
     this.color = 'verde';
+  }
+
+  cambiarObjeto():void{
+    alert(this.persona.nombre + ' ' + this.persona.apellido + ' ' + this.persona.dni);
+    this.persona = {nombre:"Emanuel", apellido:"Lena", dni:38288000};
   }
 }
