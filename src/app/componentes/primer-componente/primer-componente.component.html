@@ -1,3 +1,4 @@
+<h2>{{numero}}</h2>
 <p>primer-componente works!</p>
 <app-segundo-componente></app-segundo-componente>
 <input type="text" [class]="color">
@@ -18,4 +19,16 @@
     <input type="text" [(ngModel)]="persona.dni" name="dni">
 </div>
 
+<router-outlet></router-outlet>
+
 <input type="button" (click)="cambiarObjeto()" value="Cambiar">
+
+<br><br>
+
+<div *ngFor="let destino of destinos">
+    <!--Creamos un atributo [nombre] que recibe un parametro-->
+    <!--Creamos un método verDestino() para que maneje el evento mostrarDestino-->
+    <!--El parametro $event captura información del evento mostrarDestino-->
+    {{destino.nombre}} <app-segundo-componente [destino]="destino" (mostrarDestino)="verDestino($event)" ></app-segundo-componente>
+    <br><br>
+</div>

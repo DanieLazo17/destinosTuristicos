@@ -1,0 +1,17 @@
+<div *ngIf="destino != null">
+    <div class="card-header">{{destino.nombre}}</div>
+    <div class="card-body" *ngIf="!estado">
+        <h5 class="card-title"></h5>
+        <p class="card-text" >
+            {{mensaje.contenido}}
+        </p>
+        <button type="button" (click)="editar()" id="btnEditar" class="btn btn-success float-end"><i class="fas fa-pencil-alt"></i></button>
+        <button type="button" (click)="borrar()" id="btnBorrar" class="btn btn-success float-end"><i class="far fa-trash-alt"></i></button>
+    </div>
+    <div class="card-body" *ngIf="estado">
+        <h5 class="card-title"></h5>
+        <input type="text" name="contenido" id="contenido" [(ngModel)]="mensaje.contenido" class="col-sm-12">
+        <button (click)="guardar()" type="button" id="btnGuardar" class="btn btn-dark mt-2 col-sm-12">Guardar</button>
+        <button (click)="cancelar()" type="button" id="btnCancelar" class="btn btn-dark mt-2 col-sm-12">Cancelar</button>
+    </div>
+</div>

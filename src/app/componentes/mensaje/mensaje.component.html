@@ -1,0 +1,35 @@
+<div class="p-3 mb-2 bg-success text-white rounded-1">
+    <h5>Nuevo destino</h5>
+    <div class="input-group input-group-sm mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-sm">Nombre</span>
+        <input type="text" *ngIf="estado" [(ngModel)]="miDestino.nombre" (keyup)="validar()" name="txtNombre" (change)="buscar()" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+        <input type="text" *ngIf="!estado" [(ngModel)]="destino.nombre" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" disabled>
+    </div>
+    <div class="input-group input-group-sm mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-sm">Tipo de Turismo</span>
+        <input type="text" *ngIf="estado" [(ngModel)]="miDestino.tipoTurismo" (keyup)="validar()" name="txtTipoTurismo" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+        <input type="text" *ngIf="!estado" [(ngModel)]="destino.tipoTurismo" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" disabled>
+    </div>
+    <div class="input-group input-group-sm mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-sm">País</span>
+        <input type="text" *ngIf="estado" [(ngModel)]="miDestino.pais" (keyup)="validar()" name="txtPais" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+        <input type="text" *ngIf="!estado" [(ngModel)]="destino.pais" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" disabled>
+    </div>
+    <div class="input-group input-group-sm mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-sm">Provincia</span>
+        <input type="text" *ngIf="estado" [(ngModel)]="miDestino.provincia" (keyup)="validar()" name="txtProvincia" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+        <input type="text" *ngIf="!estado" [(ngModel)]="destino.provincia" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" disabled>
+    </div>
+    <div class="input-group input-group-sm mb-3">
+        <span class="input-group-text">Mensaje</span>
+        <textarea *ngIf="estado" [(ngModel)]="mensaje" (keyup)="validar()" class="form-control" aria-label="With textarea"></textarea>
+        <textarea *ngIf="!estado" [(ngModel)]="mensaje" (keyup)="validarMensaje()" class="form-control" aria-label="With textarea"></textarea>
+    </div>
+    <div class="input-group input-group-sm mb-1">
+        <input type="button" *ngIf="estado" (click)="guardarDestino()" class="btn btn-dark mt-2 col-sm-12" value="Guardar" [disabled]="validacion">
+        <input type="button" *ngIf="!estado" (click)="enviarMensaje()" class="btn btn-dark mt-2 col-sm-12" value="Enviar" [disabled]="validacion">
+    </div>
+    <div class="input-group input-group-sm mb-3">
+        <input type="button" (click)="cancelar()" class="btn btn-dark mt-2 col-sm-12" value="Cancelar">
+    </div>
+</div>

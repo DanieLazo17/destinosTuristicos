@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row">
+        <h2 ngClass="fuente">Bienvenido!</h2>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <label class="col-md-4">
+            Destino
+        </label>
+        <label class="offset-md-4 col-md-4">
+            Ordenar destinos por
+        </label>
+    </div>
+    <div class="row">
+        <select id="idDestino" class="col-md-4" (change)="cargarMensajes()">
+            <option value=0>Seleccione un destino</option>
+            <option *ngFor="let destino of destinos|orden:numeroOrden" value={{destino.idDestino}}>{{destino.nombre}}</option>
+        </select>
+        <select id="numero" class="offset-md-4 col-md-4" (change)="ordenarPor()">
+            <option value=0>Seleccione un orden</option>
+            <option *ngFor="let orden of ordenes" value={{orden.numero}}>{{orden.tipoOrden}}</option>
+        </select>
+    </div>
+</div>
+
+<div class="container">
+    <div id="mensaje" class="row justify-content-evenly">
+        <div class="card text-white bg-dark mt-3 mb-3 col-md-3" *ngFor="let mensaje of mensajes">
+            <div class="card-header">{{mensaje.usuario}}</div>
+            <div class="card-body">
+                <h5 class="card-title">{{mensaje.destino}}</h5>
+                <p class="card-text">{{mensaje.contenido}}</p>
+            </div>
+        </div>
+    </div>
+</div>

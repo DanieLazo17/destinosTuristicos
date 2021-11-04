@@ -1,0 +1,30 @@
+<div class="container mt-4">
+    <div class="row">
+        <h2 class="text-center" ngClass="fuente">Registración</h2>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <label for="txtUsuarioNuevo">Nuevo usuario</label>
+            <input type="text" (keyup)="validar()" [(ngModel)]="usuarioNuevo" name="usuarioNuevo" id="txtUsuarioNuevo" class="form-control" autofocus>
+            <small id="restLongCaracteres">
+                Mínimo 6 caracteres
+            </small>
+            <br>
+            <label for="txtContrasenaNueva">Nueva contraseña</label>
+            <input type="password" (keyup)="validar()" [(ngModel)]="contrasenaNueva" name="contrasenaNueva" id="txtContrasenaNueva" class="form-control">
+            <small id="restLongContra">
+                Mínimo 8 caracteres, 1 letra mayúscula, 1 minúscula y 1 número
+            </small>
+            <br>
+            <label for="txtContrasenaNuevaDup">Repetir nueva contraseña</label>
+            <input type="password" (keyup)="validar()" [(ngModel)]="contrasenaNuevaDup" name="contrasenaNuevaDup" id="txtContrasenaNuevaDup" class="form-control">
+            <div class="d-grid gap-2 col-12 mx-auto">
+                <button type="submit" (click)="subir()" class="btn btn-success mt-3" id="btnSubir" [disabled]="estado">Subir</button>
+            </div>
+            <p id="mensaje">{{mensaje}}</p>
+        </div>
+    </div>
+</div>

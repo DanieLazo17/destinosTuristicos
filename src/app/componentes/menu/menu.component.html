@@ -1,0 +1,14 @@
+<div class="row ms-1 menu">
+    <nav class="nav col-md-9">
+        <a class="nav-link col-" appFondo aria-current="page" routerLink="/">Menú</a>
+        <a class="nav-link col-" appFondo aria-current="page" routerLink="/principalcomponente">Principal</a>
+        <a class="nav-link col-" appFondo aria-current="page" routerLink="/primercomponente">Formulario</a>
+        <a class="nav-link col-" appFondo aria-current="page" routerLink="/destinoscomponente">Destinos</a>
+        <a class="nav-link col-" appFondo aria-current="page" routerLink="/segundocomponente">Argentina</a>
+        <a class="nav-link col-" appFondo routerLink="/contacto">Contacto</a>
+    </nav>
+    <div class="col-md-2">
+        <p *ngIf="servicioMensajes.MiNombreUsuario!=''">Bienvenido/a {{servicioMensajes.MiNombreUsuario}}</p>
+    </div>
+    <input type="button" [ngClass]="{'btnSalir':servicioMensajes.MiNombreUsuario==''}" class="col-md-1 col-" (click)="salir()" value="Salir">
+</div>

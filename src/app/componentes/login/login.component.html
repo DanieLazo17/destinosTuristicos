@@ -1,0 +1,33 @@
+<div class="container mt-4">
+    <div class="row">
+        <h2 class="text-center" ngClass="fuente">Acceso a tu cuenta</h2>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <label for="txtNombre">Usuario</label>
+            <input type="text" (keyup)="validar()" [(ngModel)]="usuario.nombre" name="nombre" id="txtNombre" class="form-control" autofocus
+                required>
+            <label for="txtContrasena">Contraseña</label>
+            <input type="password" (keyup)="validar()" [(ngModel)]="usuario.contrasena" name="contrasena" id="txtContrasena" class="form-control">
+
+            <div class="d-grid gap-2 col-12 mx-auto">
+                <button type="submit" (click)="ingresar()" id="btnIngreso" class="btn btn-success mt-3" [disabled]="estado">Ingresar</button>
+            </div>
+
+            <div class="col-md-12 alert alert-success mt-3" role="alert">
+                <a class="alert-link" routerLink="/registro">Registración</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <p id="demo">{{mensaje}}</p>
+        </div>
+    </div>
+</div>

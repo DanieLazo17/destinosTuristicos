@@ -1,0 +1,13 @@
+#btnEditar:hover, #btnBorrar:hover{
+    background-color: transparent;
+    border-radius: 0%;
+}
+
+#btnGuardar:hover, #btnCancelar:hover{
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+}
+
+.modal-body, .modal-header{
+    color: #000000;
+}

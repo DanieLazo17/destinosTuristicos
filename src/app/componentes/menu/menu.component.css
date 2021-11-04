@@ -1,0 +1,29 @@
+.menu{
+    background-color: #282a35;
+}
+
+.nav-link{
+    color: #ffffff;
+}
+
+.menu div p{
+    color: #ffffff;
+    margin: 10px 0px 0px;
+}
+
+.col-{
+    text-decoration: none;
+    padding: 10px;
+}
+
+.col-:hover{
+    text-decoration: underline;
+}
+
+@media only screen and (max-width: 600px){
+    .col- {width: 100%;}
+}
+
+.btnSalir{
+    display: none;
+}
