@@ -6,11 +6,11 @@ import { ApiService } from '../servicios/api.service';
   name: 'orden'
 })
 export class OrdenPipe implements PipeTransform {
-  destinos!:Array<any>;
+  destinos!:Array<Destino>;
 
   constructor(private api: ApiService){
     this.api.enviarConGetMasRuteo('Destino/Orden').subscribe( respuesta => {
-      this.destinos = <any>respuesta;
+      this.destinos = <Array<Destino>>respuesta;
     });
   }
 
