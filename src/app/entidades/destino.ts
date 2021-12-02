@@ -4,4 +4,6 @@ export class Destino {
     tipoTurismo!:string;
     pais!:string;
     provincia!:string;
+    imagen!:string;
+    cantidadDeMensajes!:number;
 }

@@ -24,9 +24,9 @@ export class PrimerComponenteComponent implements OnInit {
   */
   constructor(private servicioMensajes: MensajeService, ruteo:ActivatedRoute) { 
     this.persona = {nombre:"Emanuel", apellido:"Lena", dni:38288000};
-    this.destinos = [{ idDestino:1, nombre:"Machu Picchu", tipoTurismo:"Cultural", pais:"Perú", provincia:"Cusco" },
-    { idDestino:2, nombre:"Cataratas", tipoTurismo:"Natural", pais:"Argentina", provincia:"Misiones" },
-    { idDestino:3, nombre:"Valle de la Luna", tipoTurismo:"Natural", pais:"Argentina", provincia:"San Juan" }];
+    this.destinos = [{ idDestino:1, nombre:"Machu Picchu", tipoTurismo:"Cultural", pais:"Perú", provincia:"Cusco", imagen:"", cantidadDeMensajes:0 },
+    { idDestino:2, nombre:"Cataratas", tipoTurismo:"Natural", pais:"Argentina", provincia:"Misiones", imagen:"", cantidadDeMensajes:0 },
+    { idDestino:3, nombre:"Valle de la Luna", tipoTurismo:"Natural", pais:"Argentina", provincia:"San Juan", imagen:"", cantidadDeMensajes:0}];
 
     this.numero = ruteo.snapshot.paramMap.get("numero")??'-28';
   }

@@ -17,6 +17,8 @@ export class MensajeComponent implements OnInit {
   mensaje!:string;
   validacion!:boolean;
   estado!:boolean;
+  fecha!:string;
+  fechaActual!:string;
   @Output() mostrarMensaje = new EventEmitter<Mensaje>();
 
   constructor(private api:ApiService, private servicioMensajes:MensajeService, private ruteo: Router) {
@@ -24,6 +26,9 @@ export class MensajeComponent implements OnInit {
     this.destino = new Destino();
     this.estado = true;
     this.validacion = true;
+    let d = new Date();//Ver horario local
+    this.fechaActual = (d.toISOString()).substr(0,10);
+    this.fecha = (d.toISOString()).substr(0,10);
   }
 
   ngOnInit(): void {
@@ -49,6 +54,7 @@ export class MensajeComponent implements OnInit {
     this.miDestino = new Destino();
     this.destino = new Destino();
     this.mensaje = "";
+
   }
 
   validar(){
@@ -78,6 +84,7 @@ export class MensajeComponent implements OnInit {
     datos.append("destino", String(this.destino.idDestino));
     datos.append("usuario", String(this.servicioMensajes.MiUsuario));
     datos.append("contenido", this.mensaje);
+    datos.append("fecha", String(this.fecha));
     this.api.enviarDatosPostConRuteo("Mensaje", datos).subscribe( respuesta =>{
       this.respuestaGuardarMensaje(respuesta);
     })
@@ -104,8 +111,13 @@ export class MensajeComponent implements OnInit {
     datos.append("destino", String(this.destino.idDestino));
     datos.append("usuario", String(this.servicioMensajes.MiUsuario));
     datos.append("contenido", this.mensaje);
+    datos.append("fecha", String(this.fecha));
     this.api.enviarDatosPostConRuteo("Mensaje", datos).subscribe( respuesta =>{
       this.respuestaGuardarMensaje(respuesta);
     })
+  }
+
+  mostrarFecha():void{
+    console.log(this.fecha);
   }
 }

@@ -21,6 +21,11 @@
         <input type="text" *ngIf="!estado" [(ngModel)]="destino.provincia" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" disabled>
     </div>
     <div class="input-group input-group-sm mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-sm">Fecha</span>
+        <input type="date" *ngIf="estado" [(ngModel)]="fecha" (change)="mostrarFecha()" (keyup)="validar()" [max]="fechaActual" name="txtFecha" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+        <input type="date" *ngIf="!estado" [(ngModel)]="fecha" (change)="mostrarFecha()" (keyup)="validarMensaje()" [max]="fechaActual" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+    </div>
+    <div class="input-group input-group-sm mb-3">
         <span class="input-group-text">Mensaje</span>
         <textarea *ngIf="estado" [(ngModel)]="mensaje" (keyup)="validar()" class="form-control" aria-label="With textarea"></textarea>
         <textarea *ngIf="!estado" [(ngModel)]="mensaje" (keyup)="validarMensaje()" class="form-control" aria-label="With textarea"></textarea>

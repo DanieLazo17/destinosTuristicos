@@ -3,4 +3,5 @@ export class Mensaje {
     destino!:string;
     usuario!:string;
     contenido!:string;
+    fecha!:string;
 }
