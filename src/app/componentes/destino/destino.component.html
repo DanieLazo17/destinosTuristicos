@@ -1,7 +1,7 @@
 <div *ngIf="destino != null">
-    <div class="card-header">{{destino.nombre}}</div>
+    <div class="card-header">{{mensaje.fecha}}</div>
     <div class="card-body" *ngIf="!estado">
-        <h5 class="card-title"></h5>
+        <h5 class="card-title">{{destino.nombre}} - {{destino.provincia}}</h5>
         <p class="card-text" >
             {{mensaje.contenido}}
         </p>
