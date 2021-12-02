@@ -7,20 +7,22 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-4">
-            <label for="txtUsuarioNuevo">Nuevo usuario</label>
-            <input type="text" (keyup)="validar()" [(ngModel)]="usuarioNuevo" name="usuarioNuevo" id="txtUsuarioNuevo" class="form-control" autofocus>
+            <label for="txtUsuarioNuevo">Correo</label>
+            <input type="text" (keyup)="validar()" [(ngModel)]="correo" name="correo" id="txtCorreo" class="form-control" autofocus>
+            <label for="txtUsuarioNuevo">Nombre</label>
+            <input type="text" (keyup)="validar()" (change)="validarNombre()" [(ngModel)]="usuarioNuevo" name="usuarioNuevo" id="txtUsuarioNuevo" class="form-control">
             <small id="restLongCaracteres">
                 Mínimo 6 caracteres
             </small>
             <br>
-            <label for="txtContrasenaNueva">Nueva contraseña</label>
-            <input type="password" (keyup)="validar()" [(ngModel)]="contrasenaNueva" name="contrasenaNueva" id="txtContrasenaNueva" class="form-control">
+            <label for="txtContrasenaNueva">Contraseña</label>
+            <input type="password" (keyup)="validar()" [(ngModel)]="contrasenaNueva" name="contrasenaNueva" id="txtContrasenaNueva" class="form-control" [disabled]="txtClave">
             <small id="restLongContra">
                 Mínimo 8 caracteres, 1 letra mayúscula, 1 minúscula y 1 número
             </small>
             <br>
-            <label for="txtContrasenaNuevaDup">Repetir nueva contraseña</label>
-            <input type="password" (keyup)="validar()" [(ngModel)]="contrasenaNuevaDup" name="contrasenaNuevaDup" id="txtContrasenaNuevaDup" class="form-control">
+            <label for="txtContrasenaNuevaDup">Repetir contraseña</label>
+            <input type="password" (keyup)="validar()" [(ngModel)]="contrasenaNuevaDup" name="contrasenaNuevaDup" id="txtContrasenaNuevaDup" class="form-control" [disabled]="txtClave">
             <div class="d-grid gap-2 col-12 mx-auto">
                 <button type="submit" (click)="subir()" class="btn btn-success mt-3" id="btnSubir" [disabled]="estado">Subir</button>
             </div>

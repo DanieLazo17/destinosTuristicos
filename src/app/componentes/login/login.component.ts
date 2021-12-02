@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit {
   funcionARealizar(respuesta:Object) {
     this.usuario = <Usuario>respuesta;
     if (this.usuario.nombre == null) {
-      this.mensaje = "Correo o contraseña errónea";
+      this.mensaje = "Los datos ingresados no son correctos";
     }
     if (this.usuario.nombre != null) {
       this.mensaje = "Acceso correcto";
